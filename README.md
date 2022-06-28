@@ -17,5 +17,3 @@ Just some python review
 - Variables - no special characters in variables(other then _) or starting with numbers
     - use snake case test_var_example
 - Get user input with `input(Name:)`
-git config --global user.email "damaliboyd@ymail.com"
-  git config --global user.name "damaliboyd"

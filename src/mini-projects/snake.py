@@ -19,13 +19,19 @@ RIGHT = (1,0)
 
 class snake(object):
     def __init__(self):
-        pass
+        self.length = 1
+        self.positions = [((SCREEN_WIDTH / 2), (SCREEN_HEIGHT / 2))]
+        self.direction = random.choice([UP, DOWN, LEFT, RIGHT])
+        self.color = (17,24,47)
 
     def get_head_position(self):
-        pass
+        return self.positions[0]
 
     def turn(self,point):
-        pass
+        if self.length > 1 and (point[0] * -1,point[1] * -1) == self.direction:
+            return
+        else:
+            self.direction = point
     
     def move(self):
         pass
@@ -49,7 +55,35 @@ class food(object):
     def draw(self,surface):
         pass
 
+def draw_grid(surface):
+    for y in range(0,int(GRID_HEIGHT)):
+        for x in range(0,int(GRID_WIDTH)):
+            if (x + y) % 2 == 0:
+                r = pygame.Rect((x*GRIDSIZE, y*GRIDSIZE), (GRIDSIZE,GRIDSIZE))
+                pygame.draw.rect(surface, (93,216,228), r)
+            else:
+                rr = pygame.Rect((x*GRIDSIZE, y*GRIDSIZE), (GRIDSIZE,GRIDSIZE))
+                pygame.draw.rect(surface, (84,194,205), rr)
+
 def main():
     pygame.init()
+
+    clock = pygame.time.Clock()
+    screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT), 0, 32)
+
+    surface = pygame.Surface(screen.get_size())
+    surface = surface.convert()
+    draw_grid(surface)
+
+    snake = snake()
+    food = food()
+
+    score = 0
+
+    while(True):
+        clock.tick(10)
+        # handle events
+        screen.blit(surface,(0,0))
+        pygame.display.update()
 
 main()

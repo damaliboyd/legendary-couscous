@@ -1,6 +1,3 @@
-
-
-
 # Lists
 my_list = [4, True, 'hi'] 
 shallow_copy_list = my_list # Shallow copy
@@ -64,3 +61,29 @@ while i < 5:
     print('somebody')
     i += 1
 print("once told me...")
+
+# slice
+x = [0,1,2,3,4,5,6,7,8,9,10]
+y = ['so long', 'long', 'farewell', 'au revoir', 'auf wiedersehen']
+s = "You won't like me when i'm angry"
+
+# [stop:start:step]
+sliced = x[0:5:2]
+print(sliced)
+
+reversed = y[::-1]
+print(reversed)
+
+reversed = s[::-1]
+print(reversed)
+
+# List Comprehensions
+x = [x for x in range(5)]
+print(x)
+x = [[0 for x in range(3)] for x in range(3)]
+print(x)
+x = [x for x in range(50) if x % 5 == 0]
+print(x)
+
+x = tuple(x for x in range(5))
+print(x)

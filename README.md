@@ -120,3 +120,17 @@ for i in range(4, 7):
     print(i, end=' ')
 print()
 ```
+
+# Data Structures
+Sets
+- methods: add, remove
+- empty set `my_set = set()`
+- set literal `my_set = {1,2,3,3}`
+
+Dictionary
+```
+dict = {}
+dict = {'one': 1, 'list':[1,2,3]}
+dict['one'] = 2;
+del dict['one']
+````
